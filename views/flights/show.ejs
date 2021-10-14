@@ -38,6 +38,11 @@
         </label>
     </form>
 
+    <label for="tickets">Tickets</label>
+    <form action="/flights/<%=flight._id%>/tickets">
+        <input type="submit" value="Add Tickets">
+    </form>
+
     <% if (flight.destinations.length) { %>
         <table>
             <thead>
