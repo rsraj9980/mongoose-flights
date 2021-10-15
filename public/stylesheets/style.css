@@ -1,10 +1,33 @@
 body {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    justify-content: center;
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-color: #F3EFCC;
-    color: #32502E;
+    background-image: url("https://images.pexels.com/photos/5397116/pexels-photo-5397116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-size: 2vmin;
 }
 
 a {
-    color: #0F00FF;
+    color: white;
+}
+
+#indexIcon {
+    width: 15vmin;
+    height: 15vmin;
+}
+
+#headerIndex {
+    font-size: 40px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-color: bisque;
+    padding: 12px;
 }

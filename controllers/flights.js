@@ -1,5 +1,5 @@
 const Flight = require('../models/flight');
-const Performer = require('../models/ticket');
+const Ticket = require('../models/ticket');
 
 module.exports = {
     index,
@@ -33,16 +33,26 @@ function create(req, res) {
     });
 }
 
+function getDefaultDate() {
+    let dt = new Flight().departs;
+    let departsDate = `${dt.getFullYear()}-${(dt.getMonth() + 1)
+    .toString()
+    .padStart(2, "0")}`;
+    departsDate += `-${dt.getDate().toString().padStart(2, "0")}T${dt
+    .toTimeString()
+    .slice(0, 5)}`;
+    return departsDate;
+}
+
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        res.render('flights/show', { flight });
-    })
+        Ticket.find({ flight: req.params.id }, function(err, tickets) {
+            res.render("flights/show", {
+                flight,
+                title: "Details",
+                destDate: getDefaultDate(),
+                tickets
+            });
+        });
+    });
 }
-// function show(req, res) {
-//     Flight.findById(req.params.id, function(err, flight) {
-//         Ticket.find({ flight: flight._id }, function(err, tickets) {
-//             // Now you can pass both the flight and tickets in the res.render call
-//             res.render('flights/show', { flight, tickets });
-//         });
-//     });
-// }
