@@ -63,7 +63,7 @@
             <% } %>
 
                 <br><br><br>
-                <label for="tickets">Tickets</label>
+                <h2>Tickets</h2>
                 <form action="/flights/<%=flight._id%>/tickets/new">
                     <input type="submit" value="Add Tickets">
                     <table>
@@ -79,8 +79,7 @@
                                     <td>
                                         <%= t.seat %>
                                     </td>
-                                </tr>
-                                <tr>
+
                                     <td>
                                         <%= t.price %>
                                     </td>
