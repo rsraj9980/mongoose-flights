@@ -4,9 +4,9 @@
     <form action="/flights/<%=flightId%>/tickets" method="POST">
         <label>Seat:</label>
         <input name="seat" required pattern="[A-F][1-9]\d?"><br>
-        <label>Price</label>
+        <br><label>Price</label>
         <input name="price"><br>
-        <input type="submit" value="ADD Ticket">
+        <br><input type="submit" value="ADD Ticket">
     </form>
 
     <%- include('../partials/footer') %>
